@@ -35,25 +35,3 @@ How changes of a system parameter (e.g., feedback gain) modify the pole location
 [[Multivariable Optimal Control]]
 
 
-
-
-
-
-
-
-
-
-  
-
-## Semester study report 50%
-## Final project 50%
-idea: Self-balancing robot simulation inspired by:
-[simulations: self-balancing robot | Kaggle](https://www.kaggle.com/code/zjor86/simulations-self-balancing-robot/notebook)
-
-
-**Required parts:** 
-Write a report containing Analysis and/or design and/or implementation of a control system of interest. The structure should follow: IEEE journal/proceeding formats. The report needs to contain a Simulation (python or matlab) as well as the code used. 
-
-## Bonus project 20% 
-[[PID Controller Tuning for Circular Racetrack Control]]
-
