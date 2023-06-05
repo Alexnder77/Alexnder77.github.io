@@ -14,6 +14,8 @@ Perspective on the Properties of Feedback A major goal of control is to keep the
 ## Open-Loop Control
 ![image](20230520152329.png)
 
+![20230520152329.png]
+
 ## Feedback control 
 ![[Pasted image 20230520152403.png]]
 ![[Pasted image 20230520152418.png]]
