@@ -12,7 +12,7 @@ Perspective on the Properties of Feedback A major goal of control is to keep the
 – sensitivity to parameter changes
 
 ## Open-Loop Control
-![image](20230520152329.png)
+![20230520152329](C:\Users\Aleni\OneDrive\Documents\GitHub\Alexnder77.github.io\content\control_systems\20230520152329.png)
 
 ![20230520152329.png]
 
@@ -126,22 +126,28 @@ M_p=17 \% & \Longrightarrow: \zeta=0.5 \quad t_s=0.05 \text { sec. to } 5 \%: \\
 & \Longrightarrow e^{-\zeta \omega_n t_s}=0.05 \Longrightarrow s \omega_n=60 \Longrightarrow \omega_n=120
 \end{aligned}
 $$
+
 $$
 \Longrightarrow e^{-\zeta \omega_n t_2}=0.05 \Longrightarrow \varsigma \omega_n=60 \Longrightarrow \omega_n=120
 $$
+
 Comparing coefficients:
 $$
 K=72, \quad T_D=3.8 \times 10^{-3}
 $$
 (d) Steady-state error:
+
 $$
 E(s)=\theta_r-\theta=\frac{s\left(s+a_1+T_D K b_0\right)}{s^2+s\left(a_1+T_D K b_0\right)+K b_0} \theta_r
 $$
+
 For $\theta_r=\frac{1}{s}$ :
+
 $$
 e_{s s}=\lim _{s \rightarrow 0} s E(s)=0 \quad(\text { Type 1) }
 $$
 (e) Response to torque:
+
 $$
 \begin{gathered}
 \frac{\theta}{Q_L}=\frac{c_0}{s^2+s\left(a_1+T_D K b_0\right)+K b_0} \\
