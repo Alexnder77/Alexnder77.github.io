@@ -22,8 +22,13 @@ Example image (source is in content/notes/images/example.png)
 ![Example Image](/content/notes/images/example.png)
 
 ## Feedback control 
+<<<<<<< HEAD
 ![Pasted image 20230520152403.png](Pasted%20image%2020230301104301.png)
 ![[Pasted image 20230520152418.png]]
+=======
+![Pasted image 20230520152403.png](./Pasted%image%20230520152403.png)
+![[Pasted image 20230520152418.png]](./Pasted%image%20230520152418.png)
+>>>>>>> 9bbd52266196f2da44476a8cc87e487de7eefc67
 
 ## Errors due to constant disturbances
 
