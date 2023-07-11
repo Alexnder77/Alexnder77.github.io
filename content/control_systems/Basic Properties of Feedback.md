@@ -16,12 +16,13 @@ Perspective on the Properties of Feedback A major goal of control is to keep the
 file name: no path: 
 ![20230520152329](20230520152329.png)
 
-![20230520152329.png]
+![[20230520152329.png]]
 
-content\control_systems\20230520152329.png: 
-![content\control_systems\20230520152329.png]
+content\control_systems\20230520152329.png
 
-![content\control_systems\Pasted image 20230501161326.png]
+![[content\control_systems\20230520152329.png]]
+
+![[content\control_systems\Pasted_image_20230501161326.png]]
 
 ## Feedback control 
 ![[Pasted image 20230520152403.png]]
