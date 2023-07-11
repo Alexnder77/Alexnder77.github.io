@@ -22,8 +22,8 @@ Example image (source is in content/notes/images/example.png)
 ![Example Image](/content/notes/images/example.png)
 
 ## Feedback control 
-![[Pasted image 20230520152403.png]]
-![[Pasted image 20230520152418.png]]
+![Pasted image 20230520152403.png](./Pasted%image%20230520152403.png)
+![[Pasted image 20230520152418.png]](./Pasted%image%20230520152418.png)
 
 ## Errors due to constant disturbances
 
