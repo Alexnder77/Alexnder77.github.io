@@ -22,7 +22,7 @@ Example image (source is in content/notes/images/example.png)
 ![Example Image](/content/notes/images/example.png)
 
 ## Feedback control 
-![[Pasted image 20230520152403.png]]
+![Pasted image 20230520152403.png](Pasted%20image%2020230301104301.png)
 ![[Pasted image 20230520152418.png]]
 
 ## Errors due to constant disturbances
@@ -78,15 +78,18 @@ The system type depends on where the external signal enters the system because t
 ![[Pasted image 20230604204549.png]]
 
 a)
-	(a) $$
-\frac{Y}{R}=-\beta_1 K^3 \Longrightarrow \beta_1=0.01$$
-	(b) $$ \frac{Y}{R}=\left(\frac{-K}{1+\beta_2 K}\right)^3 \Longrightarrow \beta_2=0.364 $$
-	(c) $$ \frac{Y}{R}=\frac{-K^3}{1+\beta_3 K^3} \Longrightarrow \beta_3=0.099$$
+	(a) 
+	$$\frac{Y}{R}=-\beta_1 K^3 \Longrightarrow \beta_1=0.01 $$
+	(b) 
+	$$ \frac{Y}{R}=\left(\frac{-K}{1+\beta_2 K}\right)^3 \Longrightarrow \beta_2=0.364 $$
+	(c) 
+	$$ \frac{Y}{R}=\frac{-K^3}{1+\beta_3 K^3} \Longrightarrow \beta_3=0.099$$
 	
 
 
 b) Sensitivity $S_K^G, \quad G=\frac{Y}{R}$
 	(a)
+
 $$
 \begin{gathered}
 \frac{d G}{d K}=-3 \beta_1 K^2 \\
@@ -95,10 +98,11 @@ $$
 $$
 
 	(b)
-	
-$$ S_K^G=0.646 $$
+	$$ S_K^G=0.646 $$
+
 	(c) 
- $$S_K^G=0.03$$
+ 	$$S_K^G=0.03$$
+	
 
 Case $c$ is the least sensitive.
 
