@@ -12,7 +12,7 @@ Perspective on the Properties of Feedback A major goal of control is to keep the
 – sensitivity to parameter changes
 
 ## Open-Loop Control
-updt 3
+updt 4
 
 
 file name: no path: 
@@ -27,6 +27,10 @@ full path
 ![content\control_systems\20230520152329.png](/content/control_systems/Pasted%20image%2020230301124420.png)
 
 content\control_systems\images\20230520152329.png
+
+The github file directory:
+
+![20230520152329](/control_systems/images/20230520152329.png)
 
 ![[20230520152329.png]]
 
