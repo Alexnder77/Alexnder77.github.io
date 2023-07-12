@@ -1,23 +1,21 @@
-
-{{ range .Pages }}
-    hi <br>
-{{ end }}
-
+{{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}
 
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Prodject Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/styles/main.scss"/>
-	</head>
+    <head>
+        <title>Prodject Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {{ $portfolio_style := resources.Get "css/main.css" }}
+        <link rel="stylesheet" href=" {{ $portfolio_style.RelPermalink }}"/>
+    </head>
+
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="/content/portfolio/images/avatar.jpg" alt="" /></a>
+					<a href="#" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="" /></a>
 					<h1>Engeenering student, interested in language learning, AI and Data Science <br/>
 					</h1>
 				</div>
@@ -25,20 +23,19 @@
 
 		<!-- Main -->
 			<div id="main">
-
-				<!-- One -->
-					<section id="one">
+				<!-- heading -->
+					<section id="heading">
 						<header class="major">
 							<h2>This site contains some of my Prodjects</h2>
 						</header>
-						<p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia.</p>
+						<p>Here I should have some text about my prodjects</p>
 						<ul class="actions">
 							<li><a href="#" class="button">Learn More</a></li>
 						</ul>
 					</section>
 
-				<!-- Two -->
-					<section id="two">
+				<!-- The prodjects -->
+					<section id="Prodjects">
 						<h2>Recent Work</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
@@ -90,11 +87,17 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="/assets/portfolio_assets/js/jquery.min.js"></script>
-			<script src="/assets/portfolio_assets/js/browser.min.js"></script>
-			<script src="/assets/portfolio_assets/js/breakpoints.min.js"></script>
-			<script src="/assets/portfolio_assets/js/util.js"></script>
-			<script src="/assets/portfolio_assets/js/main.js"></script>
+            {{ $jquery_min_js := resources.Get "js/jquery.min.js" }}
+            {{ $browser_min_js := resources.Get "js/browser.min.js" }}
+            {{ $breakpoints_min_js := resources.Get "js/breakpoints.min.js" }}
+            {{ $util_js := resources.Get "js/util.js" }}
+            {{ $main_js := resources.Get "js/main.js" }}
+
+			<script src="{{ $jquery_min_js.RelPermalink }}"></script>
+			<script src="{{ $browser_min_js.RelPermalink }}"></script>
+			<script src="{{ $breakpoints_min_js.RelPermalink }}"></script>
+			<script src="{{ $util_js.RelPermalink }}"></script>
+			<script src="{{ $main_js.RelPermalink }}"></script>
 	</body>
 </html>
 

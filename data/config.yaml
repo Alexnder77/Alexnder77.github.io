@@ -46,3 +46,6 @@ links:
     link: https://twitter.com/alexand27264042
   - link_name: GitHub
     link: https://github.com/Alexnder77
+
+Params:
+  main_css: "/assets/styles/main.css"
