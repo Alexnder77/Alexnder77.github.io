@@ -10,4 +10,7 @@ enableToc: false
 [Portfolio](portfolio/portfolio_index.md)
 
 
-<a href="/content/portfolio/portfolio_index.html" class="icon brands fa-linkedin"><span class="label">Portfolio</span></a>
+<a href="/portfolio/portfolio_index.html" class="icon brands fa-linkedin"><span class="label">Portfolio</span></a>
+
+[Portfolio](portfolio/portfolio_index.html)
+[Portfolio](/portfolio/portfolio_index.html)
