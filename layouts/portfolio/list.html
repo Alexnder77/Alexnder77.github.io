@@ -34,45 +34,28 @@
 						</ul>
 					</section>
 
-				<!-- The prodjects -->
-					<section id="Prodjects">
-						<h2>Recent Work</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="prodject1.html" class="image fit thumb"><img src="/content/portfolio/images/01.jpg" alt="" /></a>
-								<h3>Prodject 1.</h3>
-								<p>description prodject one</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="/content/portfolio/images/02.jpg" alt="" /></a>
-								<h3>Prodject 2.</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="/content/portfolio/images/03.jpg" alt="" /></a>
-								<h3>Prodject 3.</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="/content/portfolio/images/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="/content/portfolio/images/05.jpg" alt="" /></a>
-								<h3>Nunc enim commodo aliquet</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="/content/portfolio/images/06.jpg" alt="" /></a>
-								<h3>Risus ornare lacinia</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
-					</section>
+            <!-- The projects -->
+                    <section id="projects">
+                        <h2>Recent Work</h2>
+                        <div class="row">
+                        {{ range .Site.Pages.ByWeight.Reverse }}
+                        {{ if eq .Section "portfolio" }}
+                        {{ if ne .File.BaseFileName "_index" }}
+                        <article class="col-6 col-12-xsmall work-item">
+                            <a href="{{ .Permalink }}" class="image fit thumb">
+                                <img src="{{ .Params.thumbnail }}" alt="{{ .Params.alt }}" />
+                            </a>
+                            <h3>{{ .Title }}</h3>
+                            <p>{{ .Description }}</p>
+                        </article>
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        </div>
+                        <ul class="actions">
+                            <li><a href="#" class="button">Full Portfolio</a></li>
+                        </ul>
+                    </section>
 			</div>
 
 		<!-- Footer -->

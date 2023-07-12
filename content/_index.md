@@ -7,5 +7,6 @@ enableToc: false
 
 
 ### Link to my portfolio start site
-[Portfolio](portfolio/_index.md)
+[Portfolio](portfolio/)
 
+<a href="/portfolio" class="button">Visit Portfolio Site</a>
