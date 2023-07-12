@@ -9,4 +9,4 @@ enableToc: false
 ### Link to my portfolio start site
 [Portfolio](portfolio/)
 
-<a href="/portfolio" class="button">Visit Portfolio Site</a>
+<a href="https://alexnder77.github.io/portfolio/" class="button">Visit Portfolio Site</a>
