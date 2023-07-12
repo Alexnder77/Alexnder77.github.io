@@ -7,10 +7,5 @@ enableToc: false
 
 
 ### Link to my portfolio start site
-[Portfolio](portfolio/portfolio_index.md)
+[Portfolio](portfolio/_index.md)
 
-
-<a href="/portfolio/portfolio_index.html" class="icon brands fa-linkedin"><span class="label">Portfolio</span></a>
-
-[Portfolio](portfolio/portfolio_index.html)
-[Portfolio](/portfolio/portfolio_index.html)
