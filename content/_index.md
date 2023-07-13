@@ -7,6 +7,6 @@ enableToc: false
 
 
 ### Link to my portfolio start site
-[Portfolio](portfolio/)
+[Portfolio](portfolio)
 
 <a href="https://alexnder77.github.io/portfolio/" class="button">Visit Portfolio Site</a>
