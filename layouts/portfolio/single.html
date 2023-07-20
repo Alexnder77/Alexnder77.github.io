@@ -1,31 +1,57 @@
-
-
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
+<style>
+    /* Adjust layout for text and TOC container */
+    .singlePage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the content horizontally */
+    }
+
+    
+    .singlePage > div {
+        flex: 1; /* Apply flex: 1 to all direct children of .singlePage */
+    }
+
+    article {
+        flex: 1;
+        margin-right: 20px; /* Add some space between the text and TOC */
+    }
 
 
+</style>
 
-{{ partial "head.html" . }}
+    {{ partial "head.html" . }}
 
-<body>
-{{partial "search.html" .}}
+    <body>
+    {{partial "search.html" .}}
 
-
-
-<div class="singlePage">
+    <div class="singlePage">
     <!-- Begin actual content -->
-    {{partial "header_copy.html" .}} 
+    <div>
+    {{partial "header_article.html" .}} 
+        <article>
+            {{partial "textprocessing.html" . }}
+        </article>
+    </div>
+            <!-- Table of Contents-->
+    {{ if .Params.toc }}
+    <aside class="tableOfContentContainer" id="tableOfContentContainer">
+        <h3>Table of Contents</h3>
+        {{ .TableOfContents }}
+    </aside>
+    {{ end }}
 
-    <article>
-        {{partial "toc.html" .}}
-        {{partial "textprocessing.html" . }}
 
-        {{ partial "reading-progress" . }}
 
-    </article>
+    </div>
+
+
+
     <!-- {{partial "footerIndex.html" .}} -->
-    {{partial "contact.html" .}}
-</div>
-</body>
+        {{partial "contact.html" .}}
+    </div>
+    </body>
 </html>
+
