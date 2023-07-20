@@ -1,6 +1,5 @@
 // Add your own CSS here!
 
-
 :root {
   --light: #faf8f8;
   --dark: #141021;
@@ -36,7 +35,7 @@ aside.tableOfContentContainer {
   align-self: start;
   margin-left: auto;  /* Add this to push the TOC to the right */
   max-width: 250px;   /* Adjust the max-width as needed */
-  top: 100px;
+  
 }
 
 nav#TableOfContents li.active::before {

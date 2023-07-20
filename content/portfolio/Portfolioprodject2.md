@@ -1,7 +1,7 @@
 ---
 title: Project 2
 description: Description of Project 2
-thumbnail: /content/portfolio/images/01.jpg
+thumbnail: "portfolio_assets/images/02.jpg"
 alt: Alt text for Project 2 image
 weight: 1
 toc: true
@@ -18,6 +18,23 @@ Content of Project 2 goes here...
 
 some text under heading 2
 
+
+
+
+
+sdfds
+
+s
+fd
+fdsf
+s
+df
+sd
+f
+sd
+f
+sdf
+
 ## Heading 3
 
 - list
@@ -25,6 +42,65 @@ some text under heading 2
 - something
 
 ### Sub heading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sd
+f
+sdf
+s
+df
+s
+df
+sd
+f
+sd
+f
+ds
+
+f
+sd
+f
+sd
+f
+sd
+f
+sd
+f
+sd
+f
+sd
+fs
+d
+fs
+df
+s
+d
+f
+sd
+f
+sd
+f
+sd
+f
+sd
+f
+
 #### Sub heading to the sub heading
 
 ## final heading

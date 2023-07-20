@@ -1,4 +1,5 @@
 {{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}
+{{ $baseImagePath := .Site.Params.portfolioImagePath }}
 
 
 <!DOCTYPE HTML>
@@ -16,7 +17,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="" /></a>
+					<a class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
 					<h1>Engeenering student, interested in language learning, AI and Data Science <br/>
 					</h1>
 				</div>
@@ -43,9 +44,12 @@
                         {{ if eq .Section "portfolio" }}
                         {{ if ne .File.BaseFileName "_index" }}
                         <article class="col-6 col-12-xsmall work-item">
-                            <a href="{{ .Permalink }}" class="image fit thumb">
-                                <img src="{{ .Params.thumbnail }}" alt="{{ .Params.alt }}" />
-                            </a>
+							
+							{{ $img_path := resources.Get ( .Params.thumbnail ) }}
+							
+							<a href="{{ .Permalink }}" class="image fit thumb">
+								<img src="{{ $img_path.RelPermalink }}" alt="{{ .Params.alt }}" />
+							</a>
                             <h3>{{ .Title }}</h3>
                             <p>{{ .Description }}</p>
                         </article>
@@ -53,9 +57,13 @@
                         {{ end }}
                         {{ end }}
                         </div>
+
+
+						<!-- hiding this button for now
                         <ul class="actions">
                             <li><a href="#" class="button">Full Portfolio</a></li>
                         </ul>
+					-->
                     </section>
 			</div>
 
