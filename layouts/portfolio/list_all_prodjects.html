@@ -1,0 +1,91 @@
+{{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}
+{{ $baseImagePath := .Site.Params.portfolioImagePath }}
+
+
+<!DOCTYPE HTML>
+<html>
+
+
+	<body class="is-preload">
+
+		This is still a work in progress, TODO
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
+					<h1>Engineering student, interested in language learning, AI and Data Science <br/>
+					</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+				<!-- heading -->
+					<section id="heading">
+						<header class="major">
+							<h2>This site contains some of my Projects</h2>
+						</header>
+						<p>Here I should have some text about my projects</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</section>
+
+            <!-- The projects -->
+                    <section id="projects">
+                        <h2>Recent Work</h2>
+                        <div class="row">
+                        {{ range .Site.Pages.ByWeight.Reverse }}
+                        {{ if eq .Section "portfolio" }}
+                        {{ if ne .File.BaseFileName "_index" }}
+                        <article class="col-6 col-12-xsmall work-item">
+							
+							{{ $img_path := resources.Get ( .Params.thumbnail ) }}
+							
+							<a href="{{ .Permalink }}" class="image fit thumb">
+								<img src="{{ $img_path.RelPermalink }}" alt="{{ .Params.alt }}" />
+							</a>
+                            <h3>{{ .Title }}</h3>
+                            <p>{{ .Description }}</p>
+                        </article>
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        </div>
+
+
+						<!-- hiding this button for now
+                        <ul class="actions">
+                            <li><a href="#" class="button">Full Portfolio</a></li>
+                        </ul>
+					-->
+                    </section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/alexander-nilsson-887003151/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://twitter.com/alexand27264042" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/Alexnder77" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+            {{ $jquery_min_js := resources.Get "js/jquery.min.js" }}
+            {{ $browser_min_js := resources.Get "js/browser.min.js" }}
+            {{ $breakpoints_min_js := resources.Get "js/breakpoints.min.js" }}
+            {{ $util_js := resources.Get "js/util.js" }}
+            {{ $main_js := resources.Get "js/main.js" }}
+
+			<script src="{{ $jquery_min_js.RelPermalink }}"></script>
+			<script src="{{ $browser_min_js.RelPermalink }}"></script>
+			<script src="{{ $breakpoints_min_js.RelPermalink }}"></script>
+			<script src="{{ $util_js.RelPermalink }}"></script>
+			<script src="{{ $main_js.RelPermalink }}"></script>
+	</body>
+</html>
+

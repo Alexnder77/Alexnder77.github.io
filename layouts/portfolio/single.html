@@ -2,7 +2,66 @@
 <html>
 <head>
     <style>
-                /* Set the height of html and body to 100% */
+/* Basic styling for the header */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust the height of the header as per your preference */
+    z-index: 1;
+    background-color: #fff;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow to the header for depth */
+}
+
+/* Basic styling for the navbar */
+.navbar2 {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styling for the navbar brand (logo) */
+.navbar2-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling for the navbar menu */
+.navbar2-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    display: flex;
+}
+
+/* Styling for the navbar menu items */
+.navbar2-menu li {
+    margin-left: 20px;
+}
+
+/* Styling for the navbar menu links */
+.navbar2-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+}
+
+/* Styling for the navbar menu links on hover */
+.navbar2-menu li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
 
 
         /* Center the container horizontally and vertically */
@@ -10,9 +69,8 @@
             justify-content: center;
             align-items: center;
             margin: 0; /* Remove default body margin */
+            padding-top: 150px; /* Adjust this value to match the height of the header */
         }
-
-
 
         /* CSS for the container */
         .container {
@@ -45,9 +103,7 @@
             .tableOfContentContainer {
                 display: none; /* Hide the TOC */
             }
-            .singlePage2 {
-                padding: 4em 1em; /* Apply padding to the main content */
-            }
+
         }
     </style>
 
@@ -56,6 +112,27 @@
 </head>
 
 <body>
+
+        <!-- Header -->
+        <div class="header" id="header">
+            <!-- Navbar and image when user is at the top of the webpage -->
+            <nav class="navbar2" id="navbar2">
+                    <!-- Navbar -->
+
+            <div class="navbar2-brand">Logo</div>
+                <ul class="navbar2-menu">
+                    <li><a href="/portfolio">Portfolio Home</a></li>
+                    <li><a href="/portfolio/about">About</a></li>
+                    <li><a href="/notes/">Notes</a></li>
+                </ul>
+            </nav>
+            <div class="image" id="headerImage">
+                <!-- Your image content here -->
+            </div>
+        </div>
+
+
+
     <div class="container">
         <div class="singlePage2">
             <!-- Begin actual content -->
@@ -79,7 +156,35 @@
 
     <br><br>
 
+    <script>
+        // JavaScript for dynamic behavior of the header
+        const header = document.getElementById('header');
+        const navbar = document.getElementById('navbar');
+        const headerImage = document.getElementById('headerImage');
+        const expandIcon = document.getElementById('expandIcon');
 
+        // Function to handle scrolling behavior
+        function handleScroll() {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+                navbar.style.display = 'none';
+            } else {
+                header.classList.remove('scrolled');
+                navbar.style.display = 'block';
+            }
+        }
+
+        // Function to toggle the navbar when the expand icon is clicked
+        function toggleNavbar() {
+            navbar.style.display = navbar.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Add event listener for scrolling
+        window.addEventListener('scroll', handleScroll);
+
+        // Add event listener for expand icon click
+        expandIcon.addEventListener('click', toggleNavbar);
+    </script>
 
 </body>
 </html>
