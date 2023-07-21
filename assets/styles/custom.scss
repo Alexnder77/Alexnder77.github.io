@@ -27,27 +27,23 @@
   --highlighted: #574010;
 }
 
-// Table of Contents styles
-aside.tableOfContentContainer {
+/* Table of Contents styles */
+aside#tableOfContentContainer {
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
-  align-self: start;
-  margin-left: auto;  /* Add this to push the TOC to the right */
-  max-width: 250px;   /* Adjust the max-width as needed */
-  
+  max-width: 250px; /* Adjust the max-width as needed */
+  //margin-left: 20px; /* Adjust this value to set the distance from the article */
 }
+
 
 nav#TableOfContents li.active::before {
   content: "\279c";
   display: inline-block;
   width: 20px;
-  margin-left: -20px;
+  margin-right: 10px; /* Change this value for spacing between bullet and TOC text */
 }
 
 nav#TableOfContents ul {
   list-style: none;
 }
-
-
-

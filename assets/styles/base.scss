@@ -20,14 +20,26 @@ html {
   }
 }
 
+
 .singlePage {
   padding: 4em 30vw;
   margin: 0 auto;
-  max-width: 1000px;
-  @media all and (max-width: 1200px) {
-    padding: 25px 5vw;
+  max-width: 1000px
+}
+
+@media all and (max-width: 1200px) {
+  .singlePage {
+      padding:25px 5vw
   }
 }
+
+.singlePage2 {
+  //padding: 4em 30vw;
+  //margin: 0 auto;
+  //max-width: 1000px;
+}
+
+
 
 
 body {

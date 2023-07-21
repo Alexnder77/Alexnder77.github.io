@@ -5,6 +5,7 @@ thumbnail: "portfolio_assets/images/02.jpg"
 alt: Alt text for Project 2 image
 weight: 1
 toc: true
+toc_float: true
 ---
 
 ## Headline 1 

@@ -1,53 +1,85 @@
 <!DOCTYPE html>
-<html lang="{{ .Lang }}">
+<html>
+<head>
+    <style>
+                /* Set the height of html and body to 100% */
 
-<style>
-    /* Adjust layout for text and TOC container */
-    .singlePage {
-        display: flex;
-        flex-wrap: wrap;
-    }
 
-    
-    .singlePage > div {
-        flex: 1; /* Apply flex: 1 to all direct children of .singlePage */
-        margin-right: 20px; /* Add some space between the text and TOC */
-    }
+        /* Center the container horizontally and vertically */
+        body {
+            justify-content: center;
+            align-items: center;
+            margin: 0; /* Remove default body margin */
+        }
 
 
 
-</style>
+        /* CSS for the container */
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: start; /* Align items at the top of the container */
+            padding: 8em 8em 0em 8em; /*top right bottom left*/
+            margin: 0 auto;
+        }
+
+        /* Define grid area for each section */
+        .singlePage2 {
+            flex: 1; /* Allow the main content to grow and occupy available space */
+            /*padding: 4em 1em; /* Apply padding to the main content */
+            max-width: 1200px;
+            min-width: 700px;
+            padding: 4em;
+        }
+
+        /* Define grid area for Table of Contents (if present) */
+        .tableOfContentContainer {
+            flex: 1; /* Allow the Table of Contents to grow and occupy available space */
+            padding-top: 100px;
+        }
+
+        /* Hide the TOC on small screens (less than 1200px width) */
+        @media all and (max-width: 1200px) {
+            .tableOfContentContainer {
+                display: none; /* Hide the TOC */
+            }
+            .singlePage2 {
+                padding: 4em 1em; /* Apply padding to the main content */
+            }
+        }
+    </style>
 
     {{ partial "head.html" . }}
 
-    <body>
-    {{partial "search.html" .}}
+</head>
 
-    <div class="singlePage">
-    <!-- Begin actual content -->
-    <div>
-    {{partial "header_article.html" .}} 
-        <article>
-            {{partial "textprocessing.html" . }}
-        </article>
+<body>
+    <div class="container">
+        <div class="singlePage2">
+            <!-- Begin actual content -->
+            
+                {{partial "header_article.html" .}} 
+                {{partial "textprocessing.html" . }}
+            
+        </div>
+
+        <!-- Table of Contents -->
+        {{ if .Params.toc }}
+            <aside class="tableOfContentContainer" id="tableOfContentContainer">
+                <h3>Table of Contents</h3>
+                {{ .TableOfContents }}
+            </aside>
+        {{ end }}
+    
     </div>
-            <!-- Table of Contents-->
-    {{ if .Params.toc }}
-    <aside class="tableOfContentContainer" id="tableOfContentContainer">
-        <h3>Table of Contents</h3>
-        {{ .TableOfContents }}
-    </aside>
-    {{ end }}
+     <!-- {{partial "footerIndex.html" .}} -->
+     {{partial "contact.html" .}}
+
+    <br><br>
 
 
 
-    </div>
-
-
-
-    <!-- {{partial "footerIndex.html" .}} -->
-        {{partial "contact.html" .}}
-    </div>
-    </body>
+</body>
 </html>
-

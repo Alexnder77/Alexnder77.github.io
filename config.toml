@@ -31,6 +31,3 @@ enableGitInfo = true
         publishDate = ["publishDate", "date"]
     [markup.goldmark.renderer]
         unsafe = true
-
-
-  portfolioImagePath = "/portfolio_assets/images/"
