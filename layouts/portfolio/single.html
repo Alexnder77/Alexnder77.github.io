@@ -87,8 +87,8 @@
         .singlePage2 {
             flex: 1; /* Allow the main content to grow and occupy available space */
             /*padding: 4em 1em; /* Apply padding to the main content */
-            max-width: 1200px;
-            min-width: 700px;
+            max-width: 1000px;
+            min-width: 800px;
             padding: 4em;
         }
 
@@ -104,6 +104,17 @@
                 display: none; /* Hide the TOC */
             }
 
+        }
+
+        /* Hide the TOC on small screens (less than 768px width - mobile devices) */
+        @media all and (max-width: 767px) {
+        /* Adjust the singlePage2 content for smaller screens */
+            .singlePage2 {
+                padding: 2em; /* Reduce the padding on smaller screens */
+                zoom: 35%; /*fix for mobile? maybe look into this TODO*/
+            }
+
+            /* TODO - fix padding around the singlepage2*/
         }
     </style>
 
@@ -136,9 +147,8 @@
     <div class="container">
         <div class="singlePage2">
             <!-- Begin actual content -->
-            
-                {{partial "header_article.html" .}} 
-                {{partial "textprocessing.html" . }}
+            {{partial "header_article.html" .}} 
+            {{partial "textprocessing.html" . }}
             
         </div>
 
