@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {{ $img_path := resources.Get ( .Params.thumbnail ) }}
+
+    {{ $logo_jpg := resources.Get "portfolio_assets/images/logo.png"}}
     <style>
 /* Basic styling for the header */
 .header {
@@ -8,27 +11,21 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 150px; /* Adjust the height of the header as per your preference */
-    z-index: 1;
-    background-color: #fff;
+    height: 250px; /* Adjust the height of the header as per your preference */
+    background-image: url("{{ $img_path.RelPermalink }}"); /* Replace the URL with the path to your image */
+    background-repeat: no-repeat;
+    background-size: cover;
     transition: background-color 0.3s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow to the header for depth */
 }
 
 /* Basic styling for the navbar */
 .navbar2 {
-    background-color: #333;
-    padding: 10px;
+    background-color: var(--light);
+    padding: 0px 2em 0px 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-/* Styling for the navbar brand (logo) */
-.navbar2-brand {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 /* Styling for the navbar menu */
@@ -64,6 +61,9 @@
 
 
 
+
+
+
         /* Center the container horizontally and vertically */
         body {
             justify-content: center;
@@ -75,44 +75,44 @@
         /* CSS for the container */
         .container {
             display: flex;
+            position: relative;
             justify-content: center;
             flex-direction: row;
             flex-wrap: nowrap;
             align-items: start; /* Align items at the top of the container */
-            padding: 8em 8em 0em 8em; /*top right bottom left*/
+            padding: 1em 8em 0em 8em; /*top right bottom left*/
             margin: 0 auto;
+            top: 0;
         }
 
         /* Define grid area for each section */
         .singlePage2 {
             flex: 1; /* Allow the main content to grow and occupy available space */
             /*padding: 4em 1em; /* Apply padding to the main content */
-            max-width: 1000px;
-            min-width: 800px;
-            padding: 4em;
+            max-width: 900px;
+            min-width: 500px;
+            padding: 15px 25px 25px 25px;
+            background: var(--light);
+            border-radius: 15px;
+
+            /* shadow for 3d effect (only bright mode)*/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /*min-width: -webkit-fill-available;*/
+
+            
         }
 
         /* Define grid area for Table of Contents (if present) */
         .tableOfContentContainer {
             flex: 1; /* Allow the Table of Contents to grow and occupy available space */
             padding-top: 100px;
+            padding-left: 25px;
         }
 
         /* Hide the TOC on small screens (less than 1200px width) */
-        @media all and (max-width: 1200px) {
+        @media all and (max-width: 750px) {
             .tableOfContentContainer {
                 display: none; /* Hide the TOC */
-            }
-
-        }
-
-        /* Hide the TOC on small screens (less than 768px width - mobile devices) */
-        @media all and (max-width: 767px) {
-        /* Adjust the singlePage2 content for smaller screens */
-            .singlePage2 {
-                padding: 0.5em; /* Reduce the padding on smaller screens */
-                /*zoom: 35%; fix for mobile? maybe look into this TODO*/
-                min-width: -webkit-fill-available;
             }
 
             .container {
@@ -120,8 +120,15 @@
 
             }
 
-            /* TODO - fix padding around the singlepage2*/
+            .singlePage2 {
+                /*padding: 0.5em;  Reduce the padding on smaller screens */
+                /*zoom: 35%; fix for mobile? maybe look into this TODO*/
+                min-width: -webkit-fill-available;
+            }
+
         }
+
+
     </style>
 
     {{ partial "head.html" . }}
@@ -134,28 +141,26 @@
         <div class="header" id="header">
             <!-- Navbar and image when user is at the top of the webpage -->
             <nav class="navbar2" id="navbar2">
-                    <!-- Navbar -->
 
-            <div class="navbar2-brand">Logo</div>
+                <a class="image avatar">
+                    <img src="{{ $logo_jpg.RelPermalink }}" alt="cant find image" 
+                    width="50" height="50" border-radius="5px"box-shadow="0 2px 4px 0.1" margin="0">
+                </a>
+
                 <ul class="navbar2-menu">
                     <li><a href="/portfolio">Portfolio Home</a></li>
                     <li><a href="/portfolio/about">About</a></li>
                     <li><a href="/notes/">Notes</a></li>
                 </ul>
+
             </nav>
-            <div class="image" id="headerImage">
-                <!-- Your image content here -->
-            </div>
         </div>
-
-
 
     <div class="container">
         <div class="singlePage2">
             <!-- Begin actual content -->
             {{partial "header_article.html" .}} 
             {{partial "textprocessing.html" . }}
-            
         </div>
 
         <!-- Table of Contents -->
