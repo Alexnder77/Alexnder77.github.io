@@ -110,8 +110,14 @@
         @media all and (max-width: 767px) {
         /* Adjust the singlePage2 content for smaller screens */
             .singlePage2 {
-                padding: 2em; /* Reduce the padding on smaller screens */
-                zoom: 35%; /*fix for mobile? maybe look into this TODO*/
+                padding: 0.5em; /* Reduce the padding on smaller screens */
+                /*zoom: 35%; fix for mobile? maybe look into this TODO*/
+                min-width: -webkit-fill-available;
+            }
+
+            .container {
+            padding: 1em;
+
             }
 
             /* TODO - fix padding around the singlepage2*/
