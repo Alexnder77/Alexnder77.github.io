@@ -1,7 +1,7 @@
 ---
 title: Project 2
 description: Description of Project 2
-thumbnail: "portfolio_assets/images/02.jpg"
+thumbnail: "portfolio_assets/images/hyperplane_MVC.jpg"
 alt: Alt text for Project 2 image
 weight: 1
 toc: true
