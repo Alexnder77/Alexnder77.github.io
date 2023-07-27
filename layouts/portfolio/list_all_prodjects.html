@@ -86,6 +86,41 @@
 			<script src="{{ $breakpoints_min_js.RelPermalink }}"></script>
 			<script src="{{ $util_js.RelPermalink }}"></script>
 			<script src="{{ $main_js.RelPermalink }}"></script>
-	</body>
+	
+
+
+
+
+
+<!-- Assuming you want to list documents in the "portfolio" section -->
+<div class="singlePage">
+    <!-- Begin actual content -->
+    <article>
+        <h1>{{ i18n "all_posts" . }}</h1>
+        {{ with .Params.description }}
+            <p>{{ . }}</p>
+        {{ end }}
+
+        <!-- Retrieve the "portfolio" section's pages -->
+        {{ $portfolio := .Site.GetPage "section" "portfolio" }}
+        {{ range $portfolio.Pages }}
+            <div class="document">
+                <!-- Display the title and any other relevant information -->
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Date.Format "January 2, 2006" }}</p>
+                <!-- Add more details here as needed -->
+            </div>
+        {{ end }}
+
+    </article>
+    {{ partial "contact.html" .}}
+</div>
+</body>
 </html>
 
+</div>
+</body>
+</html>
+
+</body>
+</html>
