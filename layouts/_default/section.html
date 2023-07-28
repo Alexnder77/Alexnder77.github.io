@@ -4,11 +4,12 @@
 
 <body>
 {{partial "search.html" .}}
+
 <div class="singlePage">
     <!-- Begin actual content -->
     {{partial "header.html" .}}
     <article>
-        <h1>{{ i18n "all_posts" . }}</h1>
+        <h1>{{ i18n "all_posts" . }} hih</h1>
         {{with .Params.description}}
             <p>{{.}}</p>
         {{end}}

@@ -1,19 +1,25 @@
-{{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}
+<!--{{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}-->
+{{ $avatar_jpg := resources.Get "portfolio_assets/images/logo.png"}}
+
 {{ $baseImagePath := .Site.Params.portfolioImagePath }}
 
 
 <!DOCTYPE HTML>
 <html>
-
+    <head>
+        <title>Prodject Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        {{ $portfolio_style := resources.Get "css/main.css" }}
+        <link rel="stylesheet" href=" {{ $portfolio_style.RelPermalink }}"/>
+    </head>
 
 	<body class="is-preload">
-
-		This is still a work in progress, TODO
 
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="/content/portfolio/about.md" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
+					<a href="/portfolio/about" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
 					<h1>Engineering student, interested in language learning, AI and Data Science <br/>
 					</h1>
 				</div>
@@ -24,41 +30,38 @@
 				<!-- heading -->
 					<section id="heading">
 						<header class="major">
-							<h2>This site contains some of my Projects</h2>
+							<h2>All Projects</h2>
 						</header>
-						<p>Here I should have some text about my projects</p>
-						<ul class="actions">
-							<li><a href="portfolio/about.md" class="button">Learn More</a></li>
-						</ul>
 					</section>
 
             <!-- The projects -->
                     <section id="projects">
-                        <h2>Recent Work</h2>
-                        <div class="row">
-                        {{ range .Site.Pages.ByWeight.Reverse }}
-                        {{ if eq .Section "portfolio" }}
-                        {{ if ne .File.BaseFileName "_index" }}
-                        <article class="col-6 col-12-xsmall work-item">
-							
-							{{ $img_path := resources.Get ( .Params.thumbnail ) }}
-							
-							<a href="{{ .Permalink }}" class="image fit thumb">
-								<img src="{{ $img_path.RelPermalink }}" alt="{{ .Params.alt }}" />
-							</a>
-                            <h3>{{ .Title }}</h3>
-                            <p>{{ .Description }}</p>
-                        </article>
-                        {{ end }}
-                        {{ end }}
-                        {{ end }}
-                        </div>
-
-
 						
-                        <ul class="actions">
-                            <li><a href="/portfolio/portfolio_list.md" class="button">Full Portfolio</a></li>
-                        </ul>
+							<!-- Begin actual content -->
+								<div class="section-ul">
+									<!-- Retrieve the "portfolio" section's pages -->
+									{{ $portfolio := .Site.GetPage "section" "portfolio" }}
+									{{ range $portfolio.Pages }}
+									<li class="section-li">
+										<div class="section">
+											<p class="meta">
+												{{partial "date-fmt.html" .}}
+											</p>
+											<!-- Display the title and any other relevant information -->
+											<div class="desc">
+												<h3><a href="{{ .Permalink }}" class="internal-link" data-src="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+											</div>
+											<div class="spacer"></div>
+											<ul class="tags">
+												{{ range (.GetTerms "tags") }}
+												<li><a href="{{ .Permalink }}">{{ .LinkTitle | title}}</a></li>
+												{{ end }}
+											</ul>
+										</div>
+									</li>
+									{{ end }}
+								</ul>
+
 					
                     </section>
 			</div>
@@ -86,41 +89,21 @@
 			<script src="{{ $breakpoints_min_js.RelPermalink }}"></script>
 			<script src="{{ $util_js.RelPermalink }}"></script>
 			<script src="{{ $main_js.RelPermalink }}"></script>
-	
-
-
-
-
-
-<!-- Assuming you want to list documents in the "portfolio" section -->
-<div class="singlePage">
-    <!-- Begin actual content -->
-    <article>
-        <h1>{{ i18n "all_posts" . }}</h1>
-        {{ with .Params.description }}
-            <p>{{ . }}</p>
-        {{ end }}
-
-        <!-- Retrieve the "portfolio" section's pages -->
-        {{ $portfolio := .Site.GetPage "section" "portfolio" }}
-        {{ range $portfolio.Pages }}
-            <div class="document">
-                <!-- Display the title and any other relevant information -->
-                <h2>{{ .Title }}</h2>
-                <p>{{ .Date.Format "January 2, 2006" }}</p>
-                <!-- Add more details here as needed -->
-            </div>
-        {{ end }}
-
-    </article>
-    {{ partial "contact.html" .}}
-</div>
-</body>
+	</body>
 </html>
 
-</div>
-</body>
+
+
+
+
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+{{ partial "head.html" . }}
+
+
 </html>
 
-</body>
-</html>
+
+
+
+
