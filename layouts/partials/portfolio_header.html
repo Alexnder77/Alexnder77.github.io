@@ -1,0 +1,11 @@
+{{ $avatar_jpg := resources.Get "portfolio_assets/images/logo.png"}}
+
+<header id="header">
+    <div class="inner">
+        <a href="/portfolio/about" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
+        <h1> some good line for heading</h1> <br/>
+            Engineering student, interested in language learning, AI and Data Science <br/>
+        {{ partial "navbar2_menu.html" }}
+        
+    </div>
+</header>
