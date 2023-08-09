@@ -7,7 +7,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Prodject Portfolio</title>
+        <title>All Projects</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         {{ $portfolio_style := resources.Get "css/main.css" }}
@@ -22,6 +22,9 @@
 					<a href="/portfolio/about" class="image avatar"><img src="{{ $avatar_jpg.RelPermalink }}" alt="cant find image" /></a>
 					<h1>Engineering student, interested in language learning, AI and Data Science <br/>
 					</h1>
+					
+					{{ partial "navbar2_menu.html" }}
+					
 				</div>
 			</header>
 
@@ -67,6 +70,8 @@
 
 		<!-- Footer -->
 			<footer id="footer">
+
+				
 				<div class="inner">
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/alexander-nilsson-887003151/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
