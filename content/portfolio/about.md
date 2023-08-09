@@ -4,7 +4,7 @@ description: Some notes about this site
 thumbnail: "portfolio_assets/images/02.jpg"
 alt: Alt text for Project 2 image
 weight: 1
-toc: true
+toc: false
 ---
 # Welcome to My Site
 On this site I show some of the projects I've been working on as well as some notes and ideas about topics I am exploring. This digital space serves as both a portfolio of my projects for potential future employers and a platform to share my thoughts and ideas with the world. Inspired by remarkable creators like [Andy Matuschak](https://andymatuschak.org/), [Serge Gorodish](https://www.blogger.com/profile/11613119860758025964), and [Shamim Ahmed](https://medshamim.com/about), maybe some day someone will find some of these notes as useful as I have found the work of the above mentioned sites. 
