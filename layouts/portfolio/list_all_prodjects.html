@@ -1,7 +1,7 @@
 <!--{{ $avatar_jpg := resources.Get "portfolio_assets/images/avatar.jpg"}}-->
 {{ $avatar_jpg := resources.Get "portfolio_assets/images/logo.png"}}
-
 {{ $baseImagePath := .Site.Params.portfolioImagePath }}
+
 
 
 <!DOCTYPE HTML>
@@ -41,7 +41,8 @@
 								<div class="section-ul">
 									<!-- Retrieve the "portfolio" section's pages -->
 									{{ $portfolio := .Site.GetPage "section" "portfolio" }}
-									{{ range $portfolio.Pages }}
+									
+									{{ range $portfolio.Pages.ByLastmod.Reverse }}
 									<li class="section-li">
 										<div class="section">
 											<p class="meta">
@@ -61,8 +62,6 @@
 									</li>
 									{{ end }}
 								</ul>
-
-					
                     </section>
 			</div>
 
@@ -90,16 +89,33 @@
 			<script src="{{ $util_js.RelPermalink }}"></script>
 			<script src="{{ $main_js.RelPermalink }}"></script>
 	</body>
+
 </html>
-
-
 
 
 
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 {{ partial "head.html" . }}
+<style>
+	[saved-theme=dark] {
+	--light: #faf8f8 !important;
+    --dark: #141021 !important;
+    --secondary: #284b63 !important;
+    --tertiary: #84a59d !important;
+    --visited: #afbfc9 !important;
+    --primary: #f28482 !important;
+    --gray: #4e4e4e !important;
+    --lightgray: #f0f0f0 !important;
+    --outlinegray: #dadada !important;
+    --million-progress-bar-color: var(--secondary) !important;
+    --highlighted: #f5dfaf88 !important;
+}
+header {
+    margin: 0;
+}
 
+</style>
 
 </html>
 
