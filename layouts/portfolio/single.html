@@ -68,6 +68,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow to the header for depth */
     filter: blur(5px); /* Add a blur effect to the image */ 
     background-attachment: fixed; /* Make the image scroll with the page */ 
+    z-index: -1; /*place behind other stuff*/
 }
 
 
@@ -94,7 +95,7 @@
             align-items: start; /* Align items at the top of the container */
             padding: 1em 8em 0em 8em; /*top right bottom left*/
             margin: 0 auto;
-            top: 0;
+            top: 100px;
         }
 
         /* Define grid area for each section */
@@ -114,11 +115,24 @@
             
         }
 
+                /* Define grid area for each section */
+        .headerStyle {
+            display: flex;
+            justify-content: center;
+        }
+
         /* Define grid area for Table of Contents (if present) */
         .tableOfContentContainer {
             flex: 1; /* Allow the Table of Contents to grow and occupy available space */
-            padding-top: 200px;
+            /*padding-top: 200px;*/
             padding-left: 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /*height: 100vh;*/
+            position: sticky;
+            top: 0;
         }
 
         /* Hide the TOC on small screens (less than 1200px width) */
@@ -165,10 +179,16 @@
             <div class="image_style"></div>
         </div>
 
+        <div class="headerStyle">
+    <div class="singlePage2" Style="align-items: center;">
+        {{partial "header_article.html" .}} 
+    </div>
+</div>
+
+
     <div class="container">
         <div class="singlePage2">
-            <!-- Begin actual content -->
-            {{partial "header_article.html" .}} 
+            <!-- main article -->
             {{partial "textprocessing.html" . }}
         </div>
 
