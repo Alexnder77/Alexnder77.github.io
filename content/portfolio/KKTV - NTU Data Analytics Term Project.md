@@ -1,7 +1,6 @@
-
 ---
 title: KKTV - NTU Data Analytics Term Project
-description: As a final project for my *NTU datascience course* we where challenged to participate in a private Kaggle competition [NTU 111-2 Data Analytics Term Project | Kaggle](https://www.kaggle.com/competitions/data-analytics-datagame/overview). In this article I will go through how I approached the challenge. 
+description: As a final project for my *NTU datascience course* we where challenged to participate in a private Kaggle competition In this article I will go through how I approached the challenge. 
 thumbnail: "portfolio_assets/images/02.jpg"
 alt: Alt text for Project 2 image
 weight: 1
@@ -63,7 +62,7 @@ For the time based features I focused only on the time, for each event in the ev
 
 In actually I tried 3 slightly different approaches to the time based feature:
 
-![[Excalidraw/timeSlotApproaches.excalidraw|timeSlotApproaches.excalidraw]]
+![](portfolio/attachment/timeSlotApproaches.excalidraw.png)
 
 1. Split duration in the "correct" timeslots
 This approach means we split the duration of each event based on the time slot cut of times, so that for example if we have a 4h event that starts in timeslot 0 and ends in timeslot 1, then the time in timeslot 0 will be added to  timeslot 0, and the remaining time will be added to the next timeslot. 
@@ -141,7 +140,7 @@ To establish a good benchmark test the light data was used with a XGB model, aft
 
 ### CNN
 Score: 0.82589
-![[Attachments/Pasted image 20230811151759.png]]
+![](portfolio/attachment/af79e82a10549af35665ed181f35358b.png)
 
 The Convolutional Neural Network (CNN) model is a deep learning architecture particularly effective in processing grid-like data, such as images or sequences. For the time-based features, the data was reshaped to take advantage of this to represent each user's engagement across different time slots as a sequence. 
 
@@ -200,7 +199,8 @@ print('Test accuracy:', score[1])
 ### CNN + LSTM
 
 Score: 0.82664
-![[Attachments/Pasted image 20230811152157.png]]
+
+![](portfolio/attachment/00232cc70e2fdea639b5b82ef7eee1e0.png)
 
 This model was used to try to combine the advantages of CNN and LSTM (Long Short-Term Memory). Which should be especially suited for modeling sequential data with spatial patterns
 
@@ -248,7 +248,8 @@ model.add(Dense(28, activation='sigmoid'))
 ### XGB
 
 SCORE 0.83112
-![[Attachments/Pasted image 20230811151444.png]]
+
+![](portfolio/attachment/2183f1111dff0cfd6be5a60e3d0f126d.png)
 
 parameter values: 
 ```python
@@ -289,12 +290,12 @@ Different weights where tried and the best combination came from combining the a
 #### Stacking
 A more advanced ensemble stacking approach was also tried, based on [Kaishen Tseng's work](https://medium.com/@kstseng/kktv-data-game-17-11-1st-place-solution-96b3d62c594c)
 
-![[Attachments/Pasted image 20230811153251.png]]
+![](portfolio/attachment/65844e05059424cc3b6b594ffbfff47c.png)
 source: [KKTV Data Game-17.11 1st Place Solution | by Kaishen Tseng | Medium](https://medium.com/@kstseng/kktv-data-game-17-11-1st-place-solution-96b3d62c594c)
 
 In short, 28 different base-models where created, one for each timeslot to be predicted. These models are trained on a subset of the train data then used to generate both train set and test set predictions. 
 
-![[Attachments/Pasted image 20230811153529.png]]
+![](portfolio/attachment/4e1d0e6140e1269c4f7ad6f288686584.png)
 source: [KKTV Data Game-17.11 1st Place Solution | by Kaishen Tseng | Medium](https://medium.com/@kstseng/kktv-data-game-17-11-1st-place-solution-96b3d62c594c)
 
 The train set predictions are then added to the input features (of the train set) and used to train the Stack model. This stack model is then used to make the final prediction on the test data combined with the test predictions from the previous base models. 
