@@ -95,7 +95,7 @@
             align-items: start; /* Align items at the top of the container */
             padding: 1em 8em 0em 8em; /*top right bottom left*/
             margin: 0 auto;
-            top: 100px;
+            top: 200px;
         }
 
         /* Define grid area for each section */
@@ -179,16 +179,11 @@
             <div class="image_style"></div>
         </div>
 
-        <div class="headerStyle">
-    <div class="singlePage2" Style="align-items: center;">
-        {{partial "header_article.html" .}} 
-    </div>
-</div>
-
 
     <div class="container">
         <div class="singlePage2">
             <!-- main article -->
+            {{partial "header_article.html" .}} 
             {{partial "textprocessing.html" . }}
         </div>
 
